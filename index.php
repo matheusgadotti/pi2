@@ -11,8 +11,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
         $email = $conexao->real_escape_string($_POST['email']);
         $senha = $conexao->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        
+        $sql_code = "SELECT id, email as nome FROM usuarios WHERE email = '$email' AND senha = '$senha'";
         $sql_query = $conexao->query($sql_code) or die("Falha na execução do código SQL: " . $conexao->error);
 
         $quantidade = $sql_query->num_rows;
