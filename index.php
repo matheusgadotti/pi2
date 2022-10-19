@@ -48,7 +48,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <title>Login</title>
 </head>
 <body>
-    <div style="margin-top: 250px; background-color: SkyBlue; width: 400px; height: 250px;">
+
+    <div style="margin-top: 200px; margin-left: 250px; background-color: SkyBlue; width: 400px; height: 250px;">
     <h1>SIGEFI</h1>
     <h1>Acesse sua conta</h1>
     <form action="" method="POST">
@@ -67,6 +68,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             <a href="registro.php">Registrar</a>
         </p>
     </form>
+
 </div>
+<p style="margin-left: 60px; margin-top: 10px; font-size: 20px">O SIGEFI é um Web Site gratuito com o objetivo de ajudar você a organizar suas Receitas e Despesas.</p>
+<p style="margin-left: 60px; margin-top: 10px; font-size: 20px">Voce tambem terá algumas opções como Investimentos, que poderá inserir para lembrar do quanto <br> precisa guardar do seu dinheiro e investir naquilo que realmente necessário para você.</p>
 </body>
 </html>

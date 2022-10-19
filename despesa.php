@@ -75,6 +75,26 @@ try {
 <h1>INSERÇÕES</h1>
 <?php
 
+    if(isset($_POST['submit'])){
+   
+
+    include_once('config.php');
+
+    $nomereceita = $_POST['nomereceita'];
+    $dataEmissaoreceita = $_POST['dataEmissaoreceita'];
+    $dataVencimentoreceita = $_POST['dataVencimentoreceita'];
+    $formapagamentoreceita = $_POST['formapagamentoreceita'];
+    $valorreceita = $_POST['valorreceita'];
+
+    $result = mysqli_query($conexao, "INSERT INTO receita(,nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita) 
+    VALUES (,'$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita')");
+    
+}
+    
+
+?>
+<?php
+
 $id_usuario = 7;
 try{
     $sql = "select * from despesa where id_usuario=:id_usuario";

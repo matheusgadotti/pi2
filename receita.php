@@ -20,7 +20,7 @@ try {
 ?>
 <div>
     <div class="box">
-    <form action="testes.php" method="POST">
+    <form action="receita.php" method="POST">
         <fieldset>
             <legend><b>Cadastro de Receita</b></legend>
             <br><br>
@@ -72,6 +72,40 @@ try {
 </div>
 <div class="lado">
 <h1>INSERÇÕES</h1>
+
+<?php
+
+    if(isset($_POST['submit'])){
+        /*print_r('Id: ' . $_POST['identificacaoreceita']);
+        print_r('<br>');
+        print_r('Nome: ' . $_POST['nomereceita']);
+        print_r('<br>');
+        print_r('Data Emissao: ' . $_POST['dataEmissaoreceita']);
+        print_r('<br>');
+        print_r('Data Vencimento: ' . $_POST['dataVencimentoreceita']);
+        print_r('<br>');
+        print_r('Forma de Pagamento: ' . $_POST['formapagamentoreceita']);
+        print_r('<br>');
+        print_r('Valor Receita: ' . $_POST['valorreceita']);
+        print_r('<br>');*/
+   
+
+    include_once('config.php');
+
+    $nomereceita = $_POST['nomereceita'];
+    $dataEmissaoreceita = $_POST['dataEmissaoreceita'];
+    $dataVencimentoreceita = $_POST['dataVencimentoreceita'];
+    $formapagamentoreceita = $_POST['formapagamentoreceita'];
+    $valorreceita = $_POST['valorreceita'];
+    $id_usuario = 7;
+
+    $result = mysqli_query($conexao, "INSERT INTO receita(nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita,id_usuario) 
+    VALUES ('$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita','$id_usuario')");
+    
+}
+    
+
+?>
 <?php
 
 $id_usuario = 7;
