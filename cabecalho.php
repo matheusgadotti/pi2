@@ -23,7 +23,7 @@ include('protect.php');
                     </div>
 
                     <div class="blocoLado_a_Lado">
-                        <a href="">Consulta </a>
+                        <a href="consulta.php">Consulta </a>
                     </div>
 
                     <div class="blocoLado_a_Lado">

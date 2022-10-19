@@ -44,25 +44,29 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
+    <div style="margin-top: 250px; background-color: SkyBlue; width: 400px; height: 250px;">
+    <h1>SIGEFI</h1>
     <h1>Acesse sua conta</h1>
     <form action="" method="POST">
         <p>
-            <label>E-mail</label>
+            <label style="margin-left: 80px;">E-mail</label>
             <input type="text" name="email">
         </p>
         <p>
-            <label>Senha</label>
+            <label style="margin-left: 80px;">Senha</label>
             <input type="password" name="senha">
         </p>
         <p>
-            <button type="submit">Entrar</button>
+            <button style="margin-left: 175px;" type="submit">Entrar</button>
         </p>
-        <p>
+        <p style="text-align: center;">
             <a href="registro.php">Registrar</a>
         </p>
     </form>
+</div>
 </body>
 </html>

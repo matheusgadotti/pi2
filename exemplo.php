@@ -23,15 +23,15 @@ try{
     echo ('<pre>');
     $despesas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo('<h2>Despesas</h2>');
-    echo ('<table border="1.0">');
-    echo ('<tr><th>Descricao</th><th>Data</th><th>Valor</th></tr>');
+    echo ('<table style="border: 1px solid black;">');
+    echo ('<tr style="border: 1px solid black;"><th style="border: 1px solid black;">Descricao</th><th style="border: 1px solid black;">Data</th><th style="border: 1px solid black;">Valor</th></tr>');
     
 //    print(json_encode($despesas));
     foreach($despesas as $despesa){
-        echo ('<tr>
-        <td>'.$despesa['nome_despesa'].'</td>
-        <td>'.$despesa['data_vencimento_despesa'].'</td>
-        <td>'.$despesa['valor_despesa'].'</td>
+        echo ('<tr style="border: 1px solid black;">
+        <td style="border: 1px solid black;">'.$despesa['nome_despesa'].'</td>
+        <td style="border: 1px solid black;">'.$despesa['data_vencimento_despesa'].'</td>
+        <td style="border: 1px solid black;">'.$despesa['valor_despesa'].'</td>
         ');
     }
     echo ('</table>');
@@ -52,16 +52,17 @@ try{
     echo ('<pre>');
     $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
+    echo('<br>');
     echo('<h2>Receitas</h2>');
-    echo ('<table border="1.0">');
-    echo ('<tr><th>Descricao</th><th>Data</th><th>Valor</th></tr>');
+    echo ('<table style="border: 1px solid black;">');
+    echo ('<tr style="border: 1px solid black;"><th style="border: 1px solid black;">Descricao</th><th style="border: 1px solid black;">Data</th><th style="border: 1px solid black;">Valor</th></tr>');
     
 //    print(json_encode($despesas));
     foreach($receitas as $receita){
-        echo ('<tr>
-        <td>'.$receita['nome_receita'].'</td>
-        <td>'.$receita['data_vencimento_receita'].'</td>
-        <td>'.$receita['valor_receita'].'</td>
+        echo ('<tr style="border: 1px solid black;">
+        <td style="border: 1px solid black;">'.$receita['nome_receita'].'</td>
+        <td style="border: 1px solid black;">'.$receita['data_vencimento_receita'].'</td>
+        <td style="border: 1px solid black;">'.$receita['valor_receita'].'</td>
         ');
     }
     echo ('</table>');
