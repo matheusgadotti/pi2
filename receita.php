@@ -66,29 +66,20 @@ require_once('config.php');
                 <label for="valorreceita" class="labelInput">Valor</label>
             </div>
             <br><br>
-            <a href="consulta.php" onclick="confirmaSaida()"><input  type="submit" name="submit" id="submit"></a>
+            <a><input type="submit" name="submit" id="submit"></a>
 
         </fieldset>
     </form>
+
 </div>
 <div class="lado">
+<p style="position: fixed; left: 46%; top: 92%; font-size: 30px;"><a style="color: black" href="consultaReceita.php"> Voltar </a></p>
+
+<div style="position: fixed; background-color: white; width: 250px; height: 500px;"></div>
 
 <?php
 
     if(isset($_POST['submit'])){
-        /*print_r('Id: ' . $_POST['identificacaoreceita']);
-        print_r('<br>');
-        print_r('Nome: ' . $_POST['nomereceita']);
-        print_r('<br>');
-        print_r('Data Emissao: ' . $_POST['dataEmissaoreceita']);
-        print_r('<br>');
-        print_r('Data Vencimento: ' . $_POST['dataVencimentoreceita']);
-        print_r('<br>');
-        print_r('Forma de Pagamento: ' . $_POST['formapagamentoreceita']);
-        print_r('<br>');
-        print_r('Valor Receita: ' . $_POST['valorreceita']);
-        print_r('<br>');*/
-   
 
     include_once('config.php');
 
@@ -99,17 +90,7 @@ require_once('config.php');
     $valorreceita = $_POST['valorreceita'];
     $idusuario = [7];
 
-    $result = mysqli_query($conexao, "INSERT INTO receita(idreceita,nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita,id_usuario) 
-    VALUES ('','$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita','$idusuario')");
+    $result = mysqli_query($conexao, "INSERT INTO receita(nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita,id_usuario) 
+    VALUES ('$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita',$valorreceita,'$idusuario')");
 }
 ?>
-
-<script>
-    function confirmaSaida() {
-    window.location = 'consulta.php'
-  }
-</script>
-</div>
-    </div>
-</body>
-</html>

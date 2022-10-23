@@ -6,6 +6,8 @@ require_once('cabecalho.php');
 
 require_once('config.php');
 
+require_once('voltar.php');
+
 try {
     $conexao = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
   //  echo "Connected to $dbName at $dbHost successfully.";
@@ -40,7 +42,9 @@ try{
     <th style="border: 1px solid black;"> Descricao </th>
     <th style="border: 1px solid black;"> Data Vencimento </th>
     <th style="border: 1px solid black;"> Data Emissao </th>
-    <th style="border: 1px solid black;"> Valor </th></tr>');
+    <th style="border: 1px solid black;"> Valor </th>
+    <th style="border: 1px solid black;"> Ações </th>
+    </tr>');
     
 //    print(json_encode($despesas));
     foreach($receitas as $receita){
@@ -50,6 +54,7 @@ try{
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['data_vencimento_receita'].' </p></td>
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['data_emissao_receita'].' </p></td>
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['valor_receita'].' </p></td>
+        <td style="border: 1px solid black;"><a style="color: red;" href="deletar.php?del='.$receita['idreceita'].'"> Apagar </a><a style="color: #d7d350;" href="editar.php?idt='.$receita['idreceita'].'"> Editar </a></td></tr>
         ');
     }
     echo ('</table>');
