@@ -23,15 +23,11 @@ include('protect.php');
                     </div>
 
                     <div class="blocoLado_a_Lado">
-                        <a href="consulta.php">Consulta </a>
+                        <a href="consultaReceita.php">Consulta Receita </a>
                     </div>
 
                     <div class="blocoLado_a_Lado">
-                        <a href="receita.php">Receita </a>
-                    </div>
-
-                    <div class="blocoLado_a_Lado">
-                        <a href="despesa.php">Despesa </a>
+                        <a href="consultaDespesa.php">Consulta Despesa </a>
                     </div>
 
                     <div class="blocoLado_a_Lado">

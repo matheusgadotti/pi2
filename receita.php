@@ -6,12 +6,12 @@ require_once('cabecalho.php');
 
 require_once('config.php');
 
-try {
+/*try {
     $conexao = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
   //  echo "Connected to $dbName at $dbHost successfully.";
 } catch (PDOException $pe) {
     die("Could not connect to the database $dbName :" . $pe->getMessage());
-}
+}*/
 
 
 /////////////////
@@ -20,7 +20,7 @@ try {
 ?>
 <div>
     <div class="box">
-    <form action="receita.php" method="POST">
+    <form action="" method="POST">
         <fieldset>
             <legend><b>Cadastro de Receita</b></legend>
             <br><br>
@@ -66,12 +66,12 @@ try {
                 <label for="valorreceita" class="labelInput">Valor</label>
             </div>
             <br><br>
-            <input type="submit" name="submit" id="submit">
+            <a href="consulta.php" onclick="confirmaSaida()"><input  type="submit" name="submit" id="submit"></a>
+
         </fieldset>
     </form>
 </div>
 <div class="lado">
-<h1>INSERÇÕES</h1>
 
 <?php
 
@@ -97,54 +97,18 @@ try {
     $dataVencimentoreceita = $_POST['dataVencimentoreceita'];
     $formapagamentoreceita = $_POST['formapagamentoreceita'];
     $valorreceita = $_POST['valorreceita'];
-    $id_usuario = 7;
+    $idusuario = [7];
 
-    $result = mysqli_query($conexao, "INSERT INTO receita(nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita,id_usuario) 
-    VALUES ('$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita','$id_usuario')");
-    
+    $result = mysqli_query($conexao, "INSERT INTO receita(idreceita,nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita,id_usuario) 
+    VALUES ('','$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita','$idusuario')");
 }
-    
-
 ?>
-<?php
 
-$id_usuario = 7;
-try{
-    $sql = "select * from receita where id_usuario=:id_usuario";
-    
-    //statement - declaracao do sql
-    $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(':id_usuario', $id_usuario);
-    $stmt->execute();
-    echo ('<pre>');
-    $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    echo('<br>');
-    echo ('<table style="border: 1px solid black;">');
-    echo ('<tr style="border: 1px solid black;">            
-    <th style="border: 1px solid black;"> Numero </th>
-    <th style="border: 1px solid black;"> Descricao </th>
-    <th style="border: 1px solid black;"> Data </th>
-    <th style="border: 1px solid black;"> Valor </th></tr>');
-    
-//    print(json_encode($despesas));
-    foreach($receitas as $receita){
-        echo ('<tr style="border: 1px solid black;">
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['idreceita'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['nome_receita'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['data_vencimento_receita'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['valor_receita'].'</p></td>
-        ');
-    }
-    echo ('</table>');
-
-
-}catch(Exception $e){
-    echo $e->getMEssage();
-}
-    
-
-?>
+<script>
+    function confirmaSaida() {
+    window.location = 'consulta.php'
+  }
+</script>
 </div>
     </div>
 </body>

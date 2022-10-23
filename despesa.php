@@ -72,7 +72,6 @@ try {
 </div>
 </div>
 <div class="lado">
-<h1>INSERÇÕES</h1>
 <?php
 
     if(isset($_POST['submit'])){
@@ -80,54 +79,15 @@ try {
 
     include_once('config.php');
 
-    $nomereceita = $_POST['nomereceita'];
-    $dataEmissaoreceita = $_POST['dataEmissaoreceita'];
-    $dataVencimentoreceita = $_POST['dataVencimentoreceita'];
-    $formapagamentoreceita = $_POST['formapagamentoreceita'];
-    $valorreceita = $_POST['valorreceita'];
+    $nomedespesa = $_POST['nomedespesa'];
+    $dataEmissaodespesa = $_POST['dataEmissaodespesa'];
+    $dataVencimentodespesa = $_POST['dataVencimentodespesa'];
+    $formapagamentodespesa = $_POST['formapagamentodespesa'];
+    $valordespesa = $_POST['valordespesa'];
 
-    $result = mysqli_query($conexao, "INSERT INTO receita(,nome_receita,data_emissao_receita,data_vencimento_receita,forma_pagamento_receita,valor_receita) 
-    VALUES (,'$nomereceita','$dataEmissaoreceita','$dataVencimentoreceita','$formapagamentoreceita','$valorreceita')");
+    $result = mysqli_query($conexao, "INSERT INTO despesa(nome_despesa,data_emissao_despesa,data_vencimento_despesa,forma_pagamento_despesa,valor_despesa) 
+    VALUES ('$nomedespesa','$dataEmissaodespesa','$dataVencimentodespesa','$formapagamentodespesa','$valordespesa')");
     
-}
-    
-
-?>
-<?php
-
-$id_usuario = 7;
-try{
-    $sql = "select * from despesa where id_usuario=:id_usuario";
-    
-    //statement - declaracao do sql
-    $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(':id_usuario', $id_usuario);
-    $stmt->execute();
-    echo ('<pre>');
-    $despesas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    echo('<br>');
-    echo ('<table style="border: 1px solid black;">');
-    echo ('<tr style="border: 1px solid black;">            
-    <th style="border: 1px solid black;"> Numero </th>
-    <th style="border: 1px solid black;"> Descricao </th>
-    <th style="border: 1px solid black;"> Data </th>
-    <th style="border: 1px solid black;"> Valor </th></tr>');
-    
-//    print(json_encode($despesas));
-    foreach($despesas as $despesa){
-        echo ('<tr style="border: 1px solid black;">
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$despesa['iddespesa'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$despesa['nome_despesa'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$despesa['data_vencimento_despesa'].'</p></td>
-        <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$despesa['valor_despesa'].'</p></td>
-        ');
-    }
-    echo ('</table>');
-
-
-}catch(Exception $e){
-    echo $e->getMEssage();
 }
     
 
