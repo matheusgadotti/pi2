@@ -54,7 +54,7 @@ try{
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['data_vencimento_receita'].' </p></td>
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['data_emissao_receita'].' </p></td>
         <td style="border: 1px solid black;"><p style="margin: 0 2px 0 2px">'.$receita['valor_receita'].' </p></td>
-        <td style="border: 1px solid black;"><a style="color: red;" href="deletar.php?del='.$receita['idreceita'].'"> Apagar </a><a style="color: #d7d350;" href="editar.php?idt='.$receita['idreceita'].'"> Editar </a></td></tr>
+        <td style="border: 1px solid black;"><a style="color: red;" href="deletar.php?del='.$receita['idreceita'].'"> Apagar </a></tr>
         ');
     }
     echo ('</table>');
