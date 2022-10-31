@@ -31,7 +31,7 @@ require_once('config2.php');
   <div style="display: inline-block; margin-left: 200px">
     <h1 style="text-align: left;">Pesquisar por Data de Emissao</h1>
   
-  <?php
+    <?php
   //Recebe dados do formulario
   $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -105,23 +105,23 @@ require_once('config2.php');
     //Verifica se o usuário clicou no botão
     if(!empty($dados['PesqEntreData'])){
 
-      $query_receita = "SELECT idreceita, nome_receita, data_emissao_receita, data_vencimento_receita, forma_pagamento_receita, valor_receita FROM receita WHERE data_emissao_receita BETWEEN :data_inicio AND :data_final";
-      $result_receita = $conexao->prepare($query_receita);
-      $result_receita->bindParam(':data_inicio', $dados['data_inicio']);
-      $result_receita->bindParam(':data_final', $dados['data_final']);
-      $result_receita->execute();
+      $query_despesa = "SELECT iddespesa, nome_despesa, data_emissao_despesa, data_vencimento_despesa, forma_pagamento_despesa, valor_despesa FROM despesa WHERE data_emissao_despesa BETWEEN :data_inicio AND :data_final";
+      $result_despesa = $conexao->prepare($query_despesa);
+      $result_despesa->bindParam(':data_inicio', $dados['data_inicio']);
+      $result_despesa->bindParam(':data_final', $dados['data_final']);
+      $result_despesa->execute();
 
-      while($row_receita = $result_receita->fetch(PDO::FETCH_ASSOC)){
+      while($row_despesa = $result_despesa->fetch(PDO::FETCH_ASSOC)){
 
-        extract($row_receita);
+        extract($row_despesa);
 
         echo "<br>";
-        echo "Numero ID: $idreceita <br>";
-        echo "Descricao: $nome_receita <br>";
-        echo "Data Vencimento: ". date('d/m/Y', strtotime($data_vencimento_receita)) . " <br>";
-        echo "Data Emissao: ". date('d/m/Y', strtotime($data_emissao_receita)) . " <br>";
-        echo "Forma de Pagamento: $forma_pagamento_receita <br>";
-        echo "Valor: R$ $valor_receita <br>";
+        echo "Numero ID: $iddespesa <br>";
+        echo "Descricao: $nome_despesa <br>";
+        echo "Data Vencimento: ". date('d/m/Y', strtotime($data_vencimento_despesa)) . " <br>";
+        echo "Data Emissao: ". date('d/m/Y', strtotime($data_emissao_despesa)) . " <br>";
+        echo "Forma de Pagamento: $forma_pagamento_despesa <br>";
+        echo "Valor: R$ $valor_despesa <br>";
 
         echo "<hr>";
       }
@@ -133,23 +133,23 @@ require_once('config2.php');
     //Verifica se o usuário clicou no botão
     if(!empty($dados['PesqVencData'])){
 
-      $query_receita = "SELECT idreceita, nome_receita, data_emissao_receita, data_vencimento_receita, forma_pagamento_receita, valor_receita FROM receita WHERE data_vencimento_receita BETWEEN :data_inicio AND :data_final";
-      $result_receita = $conexao->prepare($query_receita);
-      $result_receita->bindParam(':data_inicio', $dados['data_inicio']);
-      $result_receita->bindParam(':data_final', $dados['data_final']);
-      $result_receita->execute();
+      $query_despesa = "SELECT iddespesa, nome_despesa, data_emissao_despesa, data_vencimento_despesa, forma_pagamento_despesa, valor_despesa FROM despesa WHERE data_vencimento_despesa BETWEEN :data_inicio AND :data_final";
+      $result_despesa = $conexao->prepare($query_despesa);
+      $result_despesa->bindParam(':data_inicio', $dados['data_inicio']);
+      $result_despesa->bindParam(':data_final', $dados['data_final']);
+      $result_despesa->execute();
 
-      while($row_receita = $result_receita->fetch(PDO::FETCH_ASSOC)){
+      while($row_despesa = $result_despesa->fetch(PDO::FETCH_ASSOC)){
 
-        extract($row_receita);
+        extract($row_despesa);
 
         echo "<br>";
-        echo "Numero ID: $idreceita <br>";
-        echo "Descricao: $nome_receita <br>";
-        echo "Data Vencimento: ". date('d/m/Y', strtotime($data_vencimento_receita)) . " <br>";
-        echo "Data Emissao: ". date('d/m/Y', strtotime($data_emissao_receita)) . " <br>";
-        echo "Forma de Pagamento: $forma_pagamento_receita <br>";
-        echo "Valor: R$ $valor_receita <br>";
+        echo "Numero ID: $iddespesa <br>";
+        echo "Descricao: $nome_despesa <br>";
+        echo "Data Vencimento: ". date('d/m/Y', strtotime($data_vencimento_despesa)) . " <br>";
+        echo "Data Emissao: ". date('d/m/Y', strtotime($data_emissao_despesa)) . " <br>";
+        echo "Forma de Pagamento: $forma_pagamento_despesa <br>";
+        echo "Valor: R$ $valor_despesa <br>";
 
         echo "<hr>";
       }

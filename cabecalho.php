@@ -11,7 +11,7 @@ include('protect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>SIGEFI - Consulta</title>
+    <title>SIGEFI</title>
 </head>
 <body>
 <header>
@@ -31,11 +31,11 @@ include('protect.php');
                     </div>
 
                     <div class="blocoLado_a_Lado">
-                        <a href="investimento.php">Investimento </a>
+                        <a href="consultaInvestimento.php">Investimento </a>
                     </div>
 
                     <div class="blocoLado_a_Lado">
-                        <a href="relatorio.php">Relatorio </a>
+                        <a href="relatorio3.php">Relatorio </a>
                     </div>
 
                     <div class="blocoLado_a_Lado">

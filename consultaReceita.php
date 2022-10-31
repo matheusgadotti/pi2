@@ -35,7 +35,7 @@ try{
     echo('<br>');
     echo ('<div style="text-align: center">');
     echo('<h2 style="font-size: 20px; color: blue;">Receitas</h2><br>');
-    echo('<h2><a href="receita.php">Cadastrar Receita</a></h2>');
+    echo('<h2><a href="receita.php" style="color: blue;">Cadastrar Receita</a></h2>');
     echo ('<table style="border: 1px solid black; margin-left: 250px;">');
     echo ('<tr style="border: 1px solid black;">            
     <th style="border: 1px solid black;"> Numero ID </th>

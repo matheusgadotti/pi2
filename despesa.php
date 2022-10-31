@@ -6,36 +6,36 @@ require_once('cabecalho.php');
 
 require_once('config.php');
 
-try {
+/*try {
     $conexao = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
   //  echo "Connected to $dbName at $dbHost successfully.";
 } catch (PDOException $pe) {
     die("Could not connect to the database $dbName :" . $pe->getMessage());
-}
+}*/
 
 
 /////////////////
 
 
 ?>
-    <div>
+<div>
     <div class="box">
-    <form action="">
+    <form action="" method="POST">
         <fieldset>
             <legend><b>Cadastro de Despesa</b></legend>
             <br><br>
             <div class="inputBox">
                 <input type="text" name="nomedespesa" id="nomedespesa" class="inputUser" required>
-                <label for="nomedespesa" class="labelInput">Nome da Despesa</label>
+                <label for="nomedespesa" class="labelInput">Nome da despesa</label>
             </div>
             <br><br>
             <div class="inputBox">
-                <label for="dataEmissao">Data de Emissão</label>
+                <label for="dataEmissaodespesa">Data de Emissão</label>
                 <input type="date" name="dataEmissaodespesa" id="dataEmissaodespesa" class="inputUser" required>
             </div>
             <br><br>
             <div class="inputBox">
-                <label for="dataVencimento">Data de Vencimento</label>
+                <label for="dataVencimentodespesa">Data de Vencimento</label>
                 <input type="date" name="dataVencimentodespesa" id="dataVencimentodespesa" class="inputUser" required>
             </div>
             <br><br>
@@ -66,16 +66,20 @@ try {
                 <label for="valordespesa" class="labelInput">Valor</label>
             </div>
             <br><br>
-            <input type="submit" name="submit" id="submit">
+            <a><input type="submit" name="submit" id="submit"></a>
+
         </fieldset>
     </form>
-</div>
+
 </div>
 <div class="lado">
+<p style="position: fixed; left: 46%; top: 92%; font-size: 30px;"><a style="color: black" href="consultadespesa.php"> Voltar </a></p>
+
+<div style="position: fixed; background-color: white; width: 250px; height: 500px;"></div>
+
 <?php
 
     if(isset($_POST['submit'])){
-   
 
     include_once('config.php');
 
@@ -84,15 +88,9 @@ try {
     $dataVencimentodespesa = $_POST['dataVencimentodespesa'];
     $formapagamentodespesa = $_POST['formapagamentodespesa'];
     $valordespesa = $_POST['valordespesa'];
+    $idusuario = [7];
 
-    $result = mysqli_query($conexao, "INSERT INTO despesa(nome_despesa,data_emissao_despesa,data_vencimento_despesa,forma_pagamento_despesa,valor_despesa) 
-    VALUES ('$nomedespesa','$dataEmissaodespesa','$dataVencimentodespesa','$formapagamentodespesa','$valordespesa')");
-    
+    $result = mysqli_query($conexao, "INSERT INTO despesa(nome_despesa,data_emissao_despesa,data_vencimento_despesa,forma_pagamento_despesa,valor_despesa,id_usuario) 
+    VALUES ('$nomedespesa','$dataEmissaodespesa','$dataVencimentodespesa','$formapagamentodespesa',$valordespesa,'$idusuario')");
 }
-    
-
 ?>
-</div>
-    </div>
-</body>
-</html>
