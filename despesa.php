@@ -2,8 +2,6 @@
 
 include('protect.php');
 
-require_once('cabecalho.php');
-
 require_once('config.php');
 
 /*try {
@@ -18,6 +16,16 @@ require_once('config.php');
 
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">    
+    <title>SIGEFI</title>
+</head>
 <div>
     <div class="box">
     <form action="" method="POST">
@@ -75,7 +83,7 @@ require_once('config.php');
 <div class="lado">
 <p style="position: fixed; left: 46%; top: 92%; font-size: 30px;"><a style="color: black" href="consultadespesa.php"> Voltar </a></p>
 
-<div style="position: fixed; background-color: white; width: 250px; height: 500px;"></div>
+<div style="position: fixed; background-color: white; width: 250px; height: 70px;"></div>
 
 <?php
 

@@ -33,10 +33,11 @@ try{
     $despesas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     echo('<br>');
-    echo ('<div style="text-align: center">');
-    echo('<h2 style="font-size: 20px; color: red;">Despesas</h2><br>');
-    echo('<h2><a href="despesa.php" style="color: red;">Cadastrar Despesa</a></h2>');
-    echo ('<table style="border: 1px solid black; margin-left: 250px;">');
+    echo ('<div>');
+    echo('<h2 style="font-size: 30px; color: red; text-align: center;"><strong>Despesas</strong></h2><br>');
+    echo('<h2><a href="despesa.php" style="color: Black; font-size: 18px;"><strong style="color: Green;"> +</strong> Cadastrar Despesa</a></h2>');
+    echo ('<div style="">');
+    echo ('<table style="border: 1px solid black;">');
     echo ('<tr style="border: 1px solid black;">            
     <th style="border: 1px solid black;"> Numero ID </th>
     <th style="border: 1px solid black;"> Descricao </th>
