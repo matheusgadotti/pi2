@@ -14,13 +14,28 @@ require_once('cabecalho.php');
     <title>Document</title>
 </head>
 <body>
-    <h1>Escolha qual relatório deseja:</h1>
-<br><br><br><br>
+<br><br>
+    <h1>Relatórios</h1>
+<br><br>
 
-<p style="font-size: 30px;"><a style="color: blue;" href="relatorio.php">Relatório de Receitas</a></p>
+<table style="border: solid; margin-left: 20px;">
+    <tr>
+        <td style="border: solid; font-size: 30px; "><a style="color: Black; margin-right: 550px; margin-left: 50px;" href="relatorio.php"> Receitas </a></td>
+    </tr>
+    <tr>
+        <td style="border: solid; font-size: 30px;"><a style="color: Black; margin-right: 550px; margin-left: 50px;" href="relatorio2.php"> Depesas </a></td>
+        </tr>
+        <tr>
+        <td style="border: solid; font-size: 30px; "><a style="color: Black; margin-right: 550px; margin-left: 50px;" href="relatorio4.php"> Investimentos </a></td>
+    </tr>
+    <tr>
+        <td style="border: solid; font-size: 30px; "><a style="color: Black; margin-right: 550px; margin-left: 50px;" href="saldoAtual.php"> Saldo Atual </a></td>
+    </tr>
+</table>
+<p style="font-size: 30px;"></p>
 <br>
-<p style="font-size: 30px;"><a style="color: red;" href="relatorio2.php">Relatório de Depesas</a></p>
+<p style="font-size: 30px;"></p>
 <br>
-<p style="font-size: 30px;"><a style="color: purple;" href="relatorio4.php">Relatório de Investimentos</a></p>
+<p style="font-size: 30px;"></p>
 </body>
 </html>
